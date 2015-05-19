@@ -8,6 +8,7 @@ http://developer.android.com/training/cloudsync/backupapi.html
 *no transports other than android/com.android.internal.backup.LocalTransport seems to be working :(
 
 
+
 <b>Create and enqueue a backup request</b>
 
 programmatically:
@@ -35,6 +36,7 @@ or this if it's not for the first time
 D/BackupHelperDispatcher﹕ handling existing helper 'myfiles' android.app.backup.FileBackupHelper@32ef2023
 ```
 at this point, uninstall the app and delete one.txt, two,txt, and three.txt from the disk. Resintall the app to see three files get restored. (*auto-restore must be anabled in Backup & reset in the system settings)
+
 
 <b>Restore from a backup</b>
 
