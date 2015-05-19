@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Backup API</string>
+
+    <string name="create_files">Create test files</string>
+    <string name="files_created">Test files created</string>
+    <string name="files_restored">Test files restored</string>
+    <string name="restore">Restore</string>
+</resources>
