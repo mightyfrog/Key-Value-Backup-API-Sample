@@ -4,6 +4,7 @@ Android backup API sample code
 http://developer.android.com/training/cloudsync/backupapi.html
 
 *You must use your own package name with an API key gerated for it.
+*no transports other than android/com.android.internal.backup.LocalTransport seems to be working :(
 
 
 <b>Create and enqueue a backup request</b>
