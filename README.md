@@ -1,5 +1,5 @@
-# BackupAPI
-Android backup API sample code
+# Key/Value Backup API Sample
+Android Key/Value Backup API sample code
 
 https://developer.android.com/guide/topics/data/keyvaluebackup.html
 
