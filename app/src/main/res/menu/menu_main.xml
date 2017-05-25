@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/create"
-        android:title="@string/create_files"/>
+        android:title="@string/create_files" />
     <item
         android:id="@+id/restore"
-        android:title="@string/restore"/>
+        android:title="@string/restore" />
 </menu>

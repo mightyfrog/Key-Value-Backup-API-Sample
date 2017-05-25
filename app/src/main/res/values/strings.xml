@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">Backup API</string>
+    <string name="app_name">Backup API Sample</string>
 
     <string name="create_files">Create test files</string>
-    <string name="files_created">Test files created</string>
+    <string name="files_created">Test files created in %1$s</string>
     <string name="files_restored">Test files restored</string>
+    <string name="permission">The Storage permission is required for Marshmallow+</string>
     <string name="restore">Restore</string>
+    <string name="restore_failed">Something went wrong: error=%1$d</string>
 </resources>

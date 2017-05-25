@@ -1,11 +1,11 @@
 # BackupAPI
 Android backup API sample code
 
-http://developer.android.com/training/cloudsync/backupapi.html
+https://developer.android.com/guide/topics/data/keyvaluebackup.html
 
-*You must use your own package name with an API key gerated for it.
+*Use your own package name with an [API key](https://developer.android.com/google/backup/signup.html) generated for it to run this sample with other than LocalTransport.
 
-*no transports other than android/com.android.internal.backup.LocalTransport seems to be working :(
+*No transports other than android/com.android.internal.backup.LocalTransport seems to be working :(
 
 
 
@@ -26,12 +26,12 @@ At some point in the future, Android calls onBackup() to perform backups in the 
 adb shell bmgr run
 ```
 
-on successful backup, you'll see log messages in logcat:
+on successful backup, you'll see log messages in logcat (OR NOTHING ON A NEWER ANDROID):
 ```shell
 V/BackupServiceBinder﹕ doBackup() invoked
 D/BackupHelperDispatcher﹕ handling new helper 'myfiles'
 ```
-or this if it's not for the first time
+or this if it's not the first run
 ```shell
 D/BackupHelperDispatcher﹕ handling existing helper 'myfiles' android.app.backup.FileBackupHelper@32ef2023
 ```
@@ -47,7 +47,7 @@ new BackupManager(context).requestRestore(callback); // restores immediately
 
 adb:
 ```shell
-adb shell bmgr restore
+adb shell bmgr restore <package name>
 ```
 
 on success, you will see something like this:
@@ -56,8 +56,15 @@ restoreStarting: 1 packages
 restoreFinished: 0
 done
 ```
+or on a newer android:
+```shell
+restoreStarting: 1 packages
+onUpdate: 0 = org.mightyfrog.android.minimal.backupapi
+restoreFinished: 0
+done
+```
 restoreFinished other than 0 indicates an error: 
-https://github.com/android/platform_frameworks_base/blob/a6ed1b9547dcd592031a415739cc7e672c068f7c/core/java/android/app/backup/BackupTransport.java
+https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/app/backup/BackupTransport.java
 
 adb to list available transports:
 ```shell

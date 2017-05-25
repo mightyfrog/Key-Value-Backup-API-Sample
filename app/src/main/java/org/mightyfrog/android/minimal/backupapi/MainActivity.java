@@ -4,7 +4,7 @@ import android.app.backup.BackupManager;
 import android.app.backup.RestoreObserver;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -17,7 +17,7 @@ import java.io.IOException;
  *
  * @author Shigehiro Soejima
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +48,11 @@ public class MainActivity extends ActionBarActivity {
                 new BackupManager(this).requestRestore(new RestoreObserver() {
                     @Override
                     public void restoreFinished(int error) {
+                        if (error == 0) {
+                            Toast.makeText(MainActivity.this, R.string.files_restored, Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, getString(R.string.restore_failed, error), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
                 break;
@@ -71,7 +76,7 @@ public class MainActivity extends ActionBarActivity {
             one.createNewFile();
             two.createNewFile();
             three.createNewFile();
-            Toast.makeText(this, R.string.files_created, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.files_created, one.getParentFile()), Toast.LENGTH_LONG).show();
         } catch (IOException e) {
             android.util.Log.e(MainActivity.class.getSimpleName(), "" + e);
         }

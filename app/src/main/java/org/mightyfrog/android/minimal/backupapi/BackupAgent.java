@@ -23,7 +23,7 @@ public class BackupAgent extends BackupAgentHelper {
         // return super.getFilesDir();
 
         // override this method to change the file root directory
-        // all the files names above must be relative to this path!!
+        // all the files above must be relative to this path!!
         return Environment.getExternalStorageDirectory();
     }
 }
